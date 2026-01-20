@@ -1,0 +1,26 @@
+{
+  "parent": "something-in-the-night:psychosis_max",
+  "display": {
+    "icon": {
+      "item": "something-in-the-night:tea_bag"
+    },
+    "title": "Решение психоза — Этап I",
+    "description": "Ты нашёл способ противостоять психозу. Возможно, ещё не всё потеряно.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "get_tea_bag": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["something-in-the-night:tea_bag"]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "parent": "something-in-the-night:psychosis_solution_2",
+  "display": {
+    "icon": {
+      "item": "something-in-the-night:psychosis_tea"
+    },
+    "title": "Решение психоза — Этап III",
+    "description": "Ты приготовил чай, теперь выпей его чтобы избавиться от психоза.",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "get_psychosis_tea": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["something-in-the-night:psychosis_tea"]
+          }
+        ]
+      }
+    }
+  }
+}

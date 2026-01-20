@@ -12,6 +12,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.*;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+import sitn.smthinthenight.ModItems;
 import sitn.smthinthenight.PsychosisData;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import sitn.smthinthenight.ModEffects;
@@ -38,18 +39,14 @@ public class PsychosisTeaItem extends Item {
             float psychosis = PsychosisData.get();
             boolean permanent = PsychosisData.isMax();
 
-            // 🔴 СЛУЧАЙ 2: permanent (100%) — просто лечим
+            // 🔴 100% — просто лечим
             if (permanent) {
                 PsychosisData.drinkTea();
             }
-
-            // 🟢 СЛУЧАЙ 1: психоза нет или < 75%
+            // 🟢 < 75%
             else if (psychosis < 75f) {
-
-                // сбрасываем психоз
                 PsychosisData.drinkTea();
 
-                // даём эффект "Успокоение" на 8 минут
                 player.addStatusEffect(
                         new StatusEffectInstance(
                                 ModEffects.CALM,
@@ -62,7 +59,6 @@ public class PsychosisTeaItem extends Item {
                 );
             }
 
-            // звук
             world.playSound(
                     null,
                     player.getBlockPos(),
@@ -72,18 +68,13 @@ public class PsychosisTeaItem extends Item {
                     1.0f
             );
 
-            // тратим чай
+            // 🔥 ВАЖНО: возвращаем пустой стакан
             if (!player.getAbilities().creativeMode) {
-                stack.decrement(1);
-
-                ItemStack bottle = new ItemStack(Items.GLASS_BOTTLE);
-                if (!player.getInventory().insertStack(bottle)) {
-                    player.dropItem(bottle, false);
-                }
+                return new ItemStack(ModItems.PSYCHOSIS_TEA_EMPTY);
             }
         }
 
-        return stack.isEmpty() ? ItemStack.EMPTY : stack;
+        return stack;
     }
 
 

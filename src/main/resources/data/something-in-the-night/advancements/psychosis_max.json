@@ -1,0 +1,19 @@
+{
+  "parent": "something-in-the-night:root",
+  "display": {
+    "icon": {
+      "item": "something-in-the-night:psychosis_tea_empty"
+    },
+    "title": "Точка невозврата",
+    "description": "Твой психоз достиг критического уровня. Обратного пути больше нет.",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

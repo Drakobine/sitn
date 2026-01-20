@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#PR",
+    "PGP",
+    "TPT"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:lime_stained_glass"
+    },
+    "P": {
+      "item": "minecraft:phantom_membrane"
+    },
+    "R": {
+      "item": "minecraft:red_stained_glass"
+    },
+    "G": {
+      "item": "minecraft:glass_pane"
+    },
+    "T": {
+      "item": "minecraft:tinted_glass"
+    }
+  },
+  "result": {
+    "item": "something-in-the-night:psychosis_detector",
+    "count": 1
+  }
+}

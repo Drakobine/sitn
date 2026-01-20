@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "FPS",
+    " O "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:kelp"
+    },
+    "F": {
+      "item": "minecraft:fern"
+    },
+    "P": {
+      "item": "minecraft:paper"
+    },
+    "S": {
+      "item": "minecraft:sweet_berries"
+    },
+    "O": {
+      "item": "minecraft:oxeye_daisy"
+    }
+  },
+  "result": {
+    "item": "something-in-the-night:tea_bag",
+    "count": 1
+  }
+}

@@ -1,16 +1,12 @@
 package sitn.smthinthenight.item;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import sitn.smthinthenight.AccessoriesUtil;
 import sitn.smthinthenight.PsychosisData;
 
 import java.util.List;
@@ -33,9 +29,17 @@ public class PsychosisDetectorItem extends Item {
         tooltip.add(Text.empty());
 
         if (!PsychosisData.isDetectorEquippedClient()) {
+            tooltip.add(Text.translatable("tooltip.sitn.detector.not_equipped")
+                    .formatted(Formatting.DARK_GRAY));
+            return;
+        }
+
+        if (PsychosisData.isDetectorBootingClient()) {
             tooltip.add(
-                    Text.translatable("tooltip.sitn.detector.not_equipped")
-                            .formatted(Formatting.DARK_GRAY)
+                    Text.translatable(
+                            "tooltip.sitn.detector.booting",
+                            PsychosisData.getDetectorBootPercent()
+                    ).formatted(Formatting.GRAY)
             );
             return;
         }

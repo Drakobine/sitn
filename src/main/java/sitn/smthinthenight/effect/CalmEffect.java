@@ -8,7 +8,7 @@ public class CalmEffect extends StatusEffect {
     public CalmEffect() {
         super(
                 StatusEffectCategory.BENEFICIAL, // положительный
-                0x5FA8FF // цвет эффекта (спокойный голубой)
+                0xFF9716 // цвет эффекта (спокойный голубой)
         );
     }
 }

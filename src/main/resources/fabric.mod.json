@@ -1,17 +1,18 @@
 {
 	"schemaVersion": 1,
 	"id": "something-in-the-night",
-	"version": "${version}",
-	"name": "something in the night",
+	"version": "1.0.0",
+	"name": "Something in the night",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
-		"Me!"
+		"Drakobine",
+        "TuncayoriginaL"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://tapy.me/originals-corporation",
+		"sources": "https://github.com/Drakobine/sitn"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT License",
 	"icon": "assets/something-in-the-night/icon.png",
 	"environment": "*",
 	"entrypoints": {

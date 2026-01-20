@@ -1,0 +1,26 @@
+{
+  "parent": "something-in-the-night:root",
+  "display": {
+    "icon": {
+      "item": "something-in-the-night:psychosis_detector"
+    },
+    "title": "Первый контакт",
+    "description": "Ты активировал детектор психоза",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "equip_detector": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["something-in-the-night:psychosis_detector"]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "parent": "something-in-the-night:psychosis_solution_1",
+  "display": {
+    "icon": {
+      "item": "something-in-the-night:psychosis_tea_empty"
+    },
+    "title": "Решение психоза — Этап II",
+    "description": "У тебя уже есть стакан. Остался последний шаг.",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "get_psychosis_tea_empty": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["something-in-the-night:psychosis_tea_empty"]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "something-in-the-night:item/tea_bag"
+  }
+}

@@ -23,5 +23,7 @@ public class SomethingInTheNight implements ModInitializer {
         ModItems.register();
 
         ModEffects.register();
+        FrameBlocker.init();
+        ModItemGroups.register();
     }
 }
