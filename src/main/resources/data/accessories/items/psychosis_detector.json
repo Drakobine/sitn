@@ -1,0 +1,6 @@
+{
+  "slot": "face",
+  "render": {
+    "model": "something-in-the-night:item/psychosis_detector"
+  }
+}

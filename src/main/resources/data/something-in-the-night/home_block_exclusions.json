@@ -1,0 +1,8 @@
+{
+  "excluded_blocks": [
+    "minecraft:dirt",
+    "minecraft:grass_block",
+    "minecraft:sand",
+    "minecraft:gravel"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+	"schemaVersion": 1,
+	"id": "something-in-the-night",
+	"version": "${version}",
+	"name": "something in the night",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/something-in-the-night/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"sitn.smthinthenight.SomethingInTheNight"
+		],
+		"client": [
+			"sitn.smthinthenight.SomethingInTheNightClient"
+		]
+	},
+	"mixins": [
+		"something-in-the-night.mixins.json",
+		{
+			"config": "something-in-the-night.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*",
+        "accessories": "1.0.0-beta.47+1.20.1"
+	},
+    "recommends": {
+      "modmenu": "*"
+    }
+}

@@ -1,0 +1,82 @@
+{
+  "ambient_night": {
+    "subtitle": "sounds.sitn.ambient_night",
+    "sounds": [
+      "something-in-the-night:ambient_night"
+    ]
+  },
+
+  "psychosis.animalwalking": {
+    "subtitle": "sounds.sitn.psychosis",
+    "sounds": [
+      "something-in-the-night:psychosis/animalwalking"
+    ]
+  },
+  "psychosis.darkhorror": {
+    "subtitle": "sounds.sitn.psychosis",
+    "sounds": [
+      "something-in-the-night:psychosis/darkhorror"
+    ]
+  },
+  "psychosis.dissapear": {
+    "subtitle": "sounds.sitn.psychosis",
+    "sounds": [
+      "something-in-the-night:psychosis/dissapear"
+    ]
+  },
+  "psychosis.dogbark": {
+    "subtitle": "sounds.sitn.psychosis",
+    "sounds": [
+      "something-in-the-night:psychosis/dogbark"
+    ]
+  },
+  "psychosis.rustlinggrass": {
+    "subtitle": "sounds.sitn.psychosis",
+    "sounds": [
+      "something-in-the-night:psychosis/rustlinggrass"
+    ]
+  },
+  "psychosis.rustlinggrass2": {
+    "subtitle": "sounds.sitn.psychosis",
+    "sounds": [
+      "something-in-the-night:psychosis/rustlinggrass2"
+    ]
+  },
+  "psychosis.scaryambience": {
+    "subtitle": "sounds.sitn.psychosis",
+    "sounds": [
+      "something-in-the-night:psychosis/scaryambience"
+    ]
+  },
+  "psychosis.whisper1": {
+    "subtitle": "sounds.sitn.psychosis.whisper",
+    "sounds": [
+      "something-in-the-night:psychosis/whisper1"
+    ]
+  },
+  "psychosis.whisper2": {
+    "subtitle": "sounds.sitn.psychosis.whisper",
+    "sounds": [
+      "something-in-the-night:psychosis/whisper2"
+    ]
+  },
+  "psychosis.whisper3": {
+    "subtitle": "sounds.sitn.psychosis.whisper",
+    "sounds": [
+      "something-in-the-night:psychosis/whisper3"
+    ]
+  },
+
+  "psychosis_detector.on": {
+    "subtitle": "sounds.sitn.detector",
+    "sounds": [
+      "something-in-the-night:psychosis_detector/on"
+    ]
+  },
+  "psychosis_detector.off": {
+    "subtitle": "sounds.sitn.detector",
+    "sounds": [
+      "something-in-the-night:psychosis_detector/off"
+    ]
+  }
+}

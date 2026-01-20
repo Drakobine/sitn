@@ -1,0 +1,17 @@
+{
+  "item.something-in-the-night.psychosis_detector": "Psychosis detector",
+  "item.sitn.psychosis_detector.title": "Portative psychosis detector",
+  "item.sitn.psychosis_detector.desc": "Displays the current mental state.",
+  "item.something-in-the-night.psychosis_tea": "Psychosis tea",
+  "item.sitn.psychosis_tea.title": "Anti-psychosis tea",
+  "item.sitn.psychosis_tea.desc": "Completely removes psychosis",
+  "item.sitn.psychosis_tea.condition": "Can only be consumed at maximum psychosis",
+  "tooltip.sitn.no_data": "No data available",
+  "tooltip.sitn.state.stable": "Mental state stable",
+  "tooltip.sitn.state.anxiety": "Anxiety detected",
+  "tooltip.sitn.state.unstable": "Mental state unstable",
+  "tooltip.sitn.state.critical": "Critical mental state",
+  "hud.sitn.boot": "Initializing: %d%%",
+  "effect.something-in-the-night.calm": "Calmness",
+  "tooltip.sitn.detector.not_equipped": "Detector is not equipped"
+}

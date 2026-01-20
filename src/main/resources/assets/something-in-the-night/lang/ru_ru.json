@@ -1,0 +1,17 @@
+{
+  "item.something-in-the-night.psychosis_detector": "Детектор психоза",
+  "item.sitn.psychosis_detector.title": "Портативный детектор психоза",
+  "item.sitn.psychosis_detector.desc": "Отображает текущее психическое состояние.",
+  "item.something-in-the-night.psychosis_tea": "Успокоительный чай",
+  "item.sitn.psychosis_tea.title": "Противопсихозный чай",
+  "item.sitn.psychosis_tea.desc": "Полностью устраняет психоз",
+  "item.sitn.psychosis_tea.condition": "Можно пить только при максимальном психозе",
+  "tooltip.sitn.no_data": "Нет данных о состоянии",
+  "tooltip.sitn.state.stable": "Состояние стабильное",
+  "tooltip.sitn.state.anxiety": "Наблюдается тревожность",
+  "tooltip.sitn.state.unstable": "Психика нестабильна",
+  "tooltip.sitn.state.critical": "Критическое состояние",
+  "hud.sitn.boot": "Запуск: %d%%",
+  "effect.something-in-the-night.calm": "Успокоение",
+  "tooltip.sitn.detector.not_equipped": "Детектор не надет"
+}
