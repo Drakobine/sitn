@@ -13,6 +13,12 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.client.sound.PositionedSoundInstance;
+import net.minecraft.client.sound.SoundInstance.AttenuationType;
+import java.util.Random;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.Identifier;
 
 public class SomethingInTheNightClient implements ClientModInitializer {
 
@@ -23,10 +29,35 @@ public class SomethingInTheNightClient implements ClientModInitializer {
     private static final Identifier DETECTOR_OFF_SOUND =
             new Identifier("something-in-the-night", "psychosis_detector.off");
 
+    private static final Identifier AMBIENT_NIGHT =
+            new Identifier("something-in-the-night", "ambient_night");
+
+    private static SoundInstance nightSound;
+
+    private static final long NIGHT_START = 13500;
+    private static final long NIGHT_END   = 23100;
+
     // ===== DETECTOR BOOT =====
     private static boolean detectorBooting = false;
     private static float detectorBootProgress = 0f;
     private static final float DETECTOR_BOOT_SPEED = 1f / 400f;
+
+    private static final Identifier[] PSYCHOSIS_SOUNDS = new Identifier[] {
+            new Identifier("something-in-the-night", "animalwalking"),
+            new Identifier("something-in-the-night", "darkhorror"),
+            new Identifier("something-in-the-night", "disappear"),
+            new Identifier("something-in-the-night", "dogbark"),
+            new Identifier("something-in-the-night", "rustlinggrass"),
+            new Identifier("something-in-the-night", "rustlinggrass2"),
+            new Identifier("something-in-the-night", "scaryambience"),
+            new Identifier("something-in-the-night", "whisper1"),
+            new Identifier("something-in-the-night", "whisper2"),
+            new Identifier("something-in-the-night", "whisper3")
+    };
+
+    private static final Random RANDOM = new Random();
+
+    private static int nextPsychosisSoundTick = 0;
 
     @Override
     public void onInitializeClient() {
@@ -215,6 +246,73 @@ public class SomethingInTheNightClient implements ClientModInitializer {
                 detectorBooting = false;
                 PsychosisData.setDetectorBootingClient(false);
                 PsychosisData.setDetectorBootPercent(100);
+            }
+        }
+
+// ===== NIGHT AMBIENT =====
+        if (client.world != null) {
+            long time = client.world.getTimeOfDay() % 24000;
+            boolean isNight = time >= NIGHT_START && time <= NIGHT_END;
+
+            if (isNight) {
+                if (nightSound == null || !client.getSoundManager().isPlaying(nightSound)) {
+
+                    nightSound = new PositionedSoundInstance(
+                            SoundEvent.of(AMBIENT_NIGHT).getId(),
+                            SoundCategory.AMBIENT,
+                            0.8f,                     // volume
+                            1.0f,                     // pitch
+                            SoundInstance.createRandom(),
+                            true,                     // repeat
+                            0,                        // repeat delay
+                            AttenuationType.NONE,     // не зависит от позиции
+                            0, 0, 0,                  // позиция
+                            true                      // relative (камера)
+                    );
+
+                    client.getSoundManager().play(nightSound);
+                }
+            } else {
+                if (nightSound != null) {
+                    client.getSoundManager().stop(nightSound);
+                    nightSound = null;
+                }
+            }
+        }
+
+        // ===== RANDOM PSYCHOSIS SOUNDS LOGIC =====
+        if (client.player != null && client.world != null && !client.isPaused()) {
+
+            long time = client.world.getTimeOfDay() % 24000;
+            boolean isNight = time >= 13500 && time <= 23100;
+
+            float psychosis = PsychosisData.get();
+            float psychosisPercent = psychosis / PsychosisData.MAX;
+
+            if (isNight && psychosisPercent >= 0.75f) {
+
+                if (nextPsychosisSoundTick <= 0) {
+
+                    Identifier soundId =
+                            PSYCHOSIS_SOUNDS[RANDOM.nextInt(PSYCHOSIS_SOUNDS.length)];
+
+                    client.player.playSound(
+                            SoundEvent.of(soundId),
+                            SoundCategory.AMBIENT,
+                            0.9f,
+                            0.9f + RANDOM.nextFloat() * 0.2f
+                    );
+
+                    // следующий запуск: 15–25 секунд (300–500 тиков)
+                    nextPsychosisSoundTick = 300 + RANDOM.nextInt(201);
+
+                } else {
+                    nextPsychosisSoundTick--;
+                }
+
+            } else {
+                // если условия не выполняются — сбрасываем таймер
+                nextPsychosisSoundTick = 0;
             }
         }
     }

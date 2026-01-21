@@ -12,11 +12,11 @@ public class PlayerHome {
         this.max = max;
     }
 
-    public boolean contains(BlockPos pos) {
+    public boolean containsXZ(BlockPos pos) {
         return pos.getX() >= min.getX() && pos.getX() <= max.getX()
-                && pos.getY() >= min.getY() && pos.getY() <= max.getY()
                 && pos.getZ() >= min.getZ() && pos.getZ() <= max.getZ();
     }
+
 
     public BlockPos getMin() {
         return min;

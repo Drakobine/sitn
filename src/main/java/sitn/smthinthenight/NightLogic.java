@@ -18,8 +18,8 @@ public class NightLogic {
     private static final double PLAYER_RADIUS = 15.0;
 
     // ⚠️ ТУТ ТЫ МОЖЕШЬ ЛЕГКО БАЛАНСИТЬ
-    private static final float PSYCHOSIS_GAIN = 5f;
-    private static final float PSYCHOSIS_LOSS = 0.025f;
+    private static final float PSYCHOSIS_GAIN = 0.05f; // +1 в сек
+    private static final float PSYCHOSIS_LOSS = 0.025f; // -0.5 в сек
 
     public static void tick(ServerPlayerEntity player) {
         ServerWorld world = player.getServerWorld();
@@ -37,7 +37,12 @@ public class NightLogic {
                 PsychosisData.increase(PSYCHOSIS_GAIN);
             }
 
-        } else {
+        } else if (inHome || hasLight || hasPlayers) {
+
+            PsychosisData.decrease(PSYCHOSIS_LOSS);
+        }
+
+        if (!night) {
             PsychosisData.decrease(PSYCHOSIS_LOSS);
         }
 

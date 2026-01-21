@@ -3,7 +3,7 @@
 	"id": "something-in-the-night",
 	"version": "1.0.0",
 	"name": "Something in the night",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+    "description": "Adds a psychosis system with multiple mental states, a portable detector, special tea items, and night-based mechanics that affect the player's behavior.",
 	"authors": [
 		"Drakobine",
         "TuncayoriginaL"
