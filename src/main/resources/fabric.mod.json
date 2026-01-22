@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "something-in-the-night",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"name": "Something in the night",
     "description": "Adds a psychosis system with multiple mental states, a portable detector, special tea items, and night-based mechanics that affect the player's behavior.",
 	"authors": [

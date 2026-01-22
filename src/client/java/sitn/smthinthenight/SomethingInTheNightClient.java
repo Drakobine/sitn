@@ -43,16 +43,16 @@ public class SomethingInTheNightClient implements ClientModInitializer {
     private static final float DETECTOR_BOOT_SPEED = 1f / 400f;
 
     private static final Identifier[] PSYCHOSIS_SOUNDS = new Identifier[] {
-            new Identifier("something-in-the-night", "animalwalking"),
-            new Identifier("something-in-the-night", "darkhorror"),
-            new Identifier("something-in-the-night", "disappear"),
-            new Identifier("something-in-the-night", "dogbark"),
-            new Identifier("something-in-the-night", "rustlinggrass"),
-            new Identifier("something-in-the-night", "rustlinggrass2"),
-            new Identifier("something-in-the-night", "scaryambience"),
-            new Identifier("something-in-the-night", "whisper1"),
-            new Identifier("something-in-the-night", "whisper2"),
-            new Identifier("something-in-the-night", "whisper3")
+            new Identifier("something-in-the-night", "psychosis.animalwalking"),
+            new Identifier("something-in-the-night", "psychosis.darkhorror"),
+            new Identifier("something-in-the-night", "psychosis.disappear"),
+            new Identifier("something-in-the-night", "psychosis.dogbark"),
+            new Identifier("something-in-the-night", "psychosis.rustlinggrass"),
+            new Identifier("something-in-the-night", "psychosis.rustlinggrass2"),
+            new Identifier("something-in-the-night", "psychosis.scaryambience"),
+            new Identifier("something-in-the-night", "psychosis.whisper1"),
+            new Identifier("something-in-the-night", "psychosis.whisper2"),
+            new Identifier("something-in-the-night", "psychosis.whisper3")
     };
 
     private static final Random RANDOM = new Random();
